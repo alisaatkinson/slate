@@ -9,7 +9,7 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='https://github.com/alisaatkinson'>Written by Alisa Atkinson</a>
 
 includes:
   - errors
@@ -25,80 +25,83 @@ meta:
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+The Documentation API is used to determine the Technical Writer's effectiveness when writing API documentation with Slate. The Documentation enpoints allow access to various published works including but not limited to:
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+* User Guides
+* Quick Reference Cards
+* API Reference Documentation
+* Engineering Architecture
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
 # Authentication
 
-> To authorize, use this code:
+> Use the following code to perform authentication for Documentation:
 
 ```ruby
-require 'kittn'
+require 'Documentation'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = Documentation::APIClient.authorize!('UserGuide')
 ```
 
 ```python
-import kittn
+import Documentation
 
-api = kittn.authorize('meowmeowmeow')
+api = Documentation.authorize('User Guide')
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: UserGuide"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const Documentation = require('Documentation');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = Documentation.authorize('userguide');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> 
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+The library uses API keys to allow access to the Documentation API. New API keys can be registered at the following portal:
+ [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Documentation expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: UserGuide`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+ <code>UserGuide</code> must be replaced with a API key.
 </aside>
 
-# Kittens
+# Documentation
 
-## Get All Kittens
+## Get All UserGuides
 
 ```ruby
-require 'kittn'
+require 'UserGuides'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+api = UserGuides::APIClient.authorize!('UserGuide')
+api.userguides.get
 ```
 
 ```python
-import kittn
+import userguide
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+api = userguides.authorize('UserGuide')
+api.UserGuides.get()
 ```
 
 ```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
+curl "http://example.com/api/Userguide" \
+  -H "Authorization: UserGuides"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const Userguide = require('UserGuide');
 
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+let api = userguides.authorize('UserGuide');
+let UserGuides = api.userguides.get();
 ```
 
 > The above command returns JSON structured like this:
@@ -107,44 +110,40 @@ let kittens = api.kittens.get();
 [
   {
     "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "title": "Backend for Frontend",
+    "Genre": "Architecture",
   },
   {
     "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "title": "Azure Dev-Ops Naming Conventions",
+    "genre": "Developer Documentation",
   }
 ]
 ```
 
-This endpoint retrieves all kittens.
+The following endpoint retrieves all User Guides.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET http://example.com/api/UserGuides`
 
 ### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+include_allgenres | false | If set to true, the result will also include all genres.
+available | true | If set to false, the result will include varying types of documentation.
 
 <aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Remember — When life gives you lemons read the juicer manual!
 </aside>
 
 ## Get a Specific Kitten
 
 ```ruby
-require 'kittn'
+require 'UserGuide'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = Kittn::APIClient.authorize!('UserGuides')
 api.kittens.get(2)
 ```
 
@@ -196,30 +195,30 @@ ID | The ID of the kitten to retrieve
 ## Delete a Specific Kitten
 
 ```ruby
-require 'kittn'
+require 'alisa'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
+api = Alisa::APIClient.authorize!('UserGuide')
+api.alisa.delete(2)
 ```
 
 ```python
-import kittn
+import Alisa
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
+api = Alisa.authorize('UserGuide')
+api.Alisa.delete(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2" \
+curl "http://example.com/api/Alisa/2" \
   -X DELETE \
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: UserGuide"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const alisa = require('alisa');
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
+let api = alisa.authorize('UserGuide');
+let max = api.Alisa.delete(2);
 ```
 
 > The above command returns JSON structured like this:
@@ -231,15 +230,15 @@ let max = api.kittens.delete(2);
 }
 ```
 
-This endpoint deletes a specific kitten.
+This endpoint deletes a specific user guide.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+`DELETE http://alisa.atkinson.com/UserGuide/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to delete
+ID | The ID of the User Guide to delete
 
