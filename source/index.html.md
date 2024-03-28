@@ -20,7 +20,7 @@ code_clipboard: true
 
 meta:
   - name: description
-    content: Documentation for the Kittn API
+    content: Documentation for the Documentation API
 ---
 
 # Introduction
@@ -138,32 +138,32 @@ available | true | If set to false, the result will include varying types of doc
 Remember — When life gives you lemons read the juicer manual!
 </aside>
 
-## Get a Specific Kitten
+## Get a Specific Document
 
 ```ruby
 require 'UserGuide'
 
-api = Kittn::APIClient.authorize!('UserGuides')
-api.kittens.get(2)
+api = Documentation::APIClient.authorize!('UserGuides')
+api.documentation.get(2)
 ```
 
 ```python
-import kittn
+import document
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
+api = document.authorize('User Guide')
+api.documents.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
+curl "http://example.com/api/documents/2" \
+  -H "Authorization: User Guide"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const document = require('Document');
 
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+let api = document.authorize('User Guide');
+let max = api.document.get(2);
 ```
 
 > The above command returns JSON structured like this:
@@ -178,21 +178,21 @@ let max = api.kittens.get(2);
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint retrieves a specific document.
 
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://example.com/documents/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
+ID | The ID of the document to retrieve
 
-## Delete a Specific Kitten
+## Delete a Specific Document
 
 ```ruby
 require 'alisa'
