@@ -68,7 +68,7 @@ GEM
       padrino-helpers (~> 0.15.0)
       parallel
       rack (>= 1.4.5, < 3)
-      sassc (~> 2.0)
+      sassc (~> 2.1.0)
       servolux
       tilt (~> 2.0.9)
       toml
@@ -135,7 +135,7 @@ DEPENDENCIES
   nokogiri (~> 1.13.3)
   redcarpet (~> 3.6.0)
   rouge (~> 3.21)
-  sass
+  sassc (~> 2.1.0
   webrick
 
 RUBY VERSION
